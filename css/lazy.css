@@ -1,0 +1,8 @@
+/*
+You can unregister this file by using the following in your THEME functions file:
+wp_dequeue_style('lazyload-css');
+*/
+
+.lazy {
+    display: none;
+}
