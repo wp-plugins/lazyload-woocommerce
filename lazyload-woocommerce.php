@@ -1,9 +1,9 @@
 <?php
 
 /*
-  Plugin Name: LazyLoad WooCommerce
-  Plugin URI:
-  Description: LazyLoad WooCommerce includes the functionality to properly append LazyLoad into the image loop for WooCommerce in product listings (i.e. category). This does not apply to the individual product image, but anywhere they are used in the loop (by default, the unordered list). Includes a fallback if JavaScript is not active. Does not call in jQuery (you must have this already in use).
+  Plugin Name: LazyLoad for WooCommerce
+  Plugin URI: https://wordpress.org/plugins/lazyload-woocommerce/
+  Description: LazyLoad for WooCommerce includes the functionality to properly append LazyLoad into the image loop for WooCommerce in product listings (i.e. category). This does not apply to the individual product image, but anywhere they are used in the loop (by default, the unordered list). Includes a fallback if JavaScript is not active. Does not call in jQuery (you must have this already in use).
   Version: 1.0.0
   Author: Edge Webware
   Author URI: http://edgewebware.com
@@ -36,7 +36,7 @@ if (!defined('WPINC')) {
 add_filter('woocommerce_get_sections_products', 'lazyload_woo_add_section');
 
 function lazyload_woo_add_section($sections) {
-    $sections['lazywoo'] = __('Lazy Load', 'lazyload-woo');
+    $sections['lazywoo'] = __('LazyLoad', 'lazyload-woo');
     return $sections;
 }
 
@@ -46,7 +46,7 @@ function lazyload_woo_all_settings($settings, $current_section) {
     if ($current_section == 'lazywoo') {
         $settings_slider = array();
         // Add Title to the Settings
-        $settings_slider[] = array('name' => __('Lazy Load Image Settings', 'lazyload-woo'), 'type' => 'title', 'desc' => __('The following options are used to configure Lazy Load for WooCommerce. It is recommended that these match your set catalog image dimensions under Display.', 'lazyload-woo'), 'id' => 'lazywoo');
+        $settings_slider[] = array('name' => __('LazyLoad Image Settings', 'lazyload-woo'), 'type' => 'title', 'desc' => __('The following options are used to configure LazyLoad for WooCommerce. It is recommended that these match your set catalog image dimensions under Display.', 'lazyload-woo'), 'id' => 'lazywoo');
         // Add first checkbox option
         $settings_slider[] = array(
             'name' => __('Product Width', 'text-domain'),
