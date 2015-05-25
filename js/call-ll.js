@@ -3,5 +3,5 @@
  wp_dequeue_style('lazyload-call');
  */
 $(function () {
-    $("img.lazy").lazyload({effect: 'fadeIn'});
+    $("img.lazy").show().lazyload({effect: "fadeIn"});
 });
