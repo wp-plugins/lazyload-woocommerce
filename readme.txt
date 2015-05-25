@@ -15,7 +15,7 @@ Lazy Load for WooCommerce includes the functionality to properly append Lazy Loa
 == Installation ==
 1. Download the plugin
 2. Install the plugin
-3. Go to WooCommerce > Settings > Products and click the "Lazy Load" option. Set your Product width/height for the loop
+3. Go to WooCommerce > Settings > Products and click the "Lazy Load" option. Set your Product width/height for the loop and optionally a custom placeholder image (full src).
 
 To note, you will need to have jQuery running for this to work. To reduce conflicts, we have chosen not to include jQuery. To include jQuery, just use the following in your template functions file: `wp_enqueue_script('jquery');`
 
