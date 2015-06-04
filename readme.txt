@@ -19,7 +19,7 @@ Lazy Load for WooCommerce includes the functionality to properly append Lazy Loa
 
 To note, you will need to have jQuery running for this to work. To reduce conflicts, we have chosen not to include jQuery. To include jQuery, just use the following in your template functions file: `wp_enqueue_script('jquery');`
 
-Additionally, we allow for you to modify the available functions for Lazy Load. To dequeue the plugin functions and use your own, use `wp_dequeue_style('lazyload-call');`. See http://www.appelsiini.net/projects/lazyload for a full rundown of options (trigger loading, effects, images in containers, nonsequential images, invisible images, etc.).
+Additionally, we allow for you to modify the available functions for Lazy Load. To dequeue the plugin functions and use your own, use `wp_dequeue_script('lazyload-call');`. See http://www.appelsiini.net/projects/lazyload for a full rundown of options (trigger loading, effects, images in containers, nonsequential images, invisible images, etc.).
 
 == Screenshots ==
 1. Setting up the variable width/height for the products that will be used for LazyLoad.
