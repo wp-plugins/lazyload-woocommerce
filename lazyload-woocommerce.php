@@ -4,7 +4,7 @@
   Plugin Name: Lazy Load for WooCommerce
   Plugin URI: https://wordpress.org/plugins/lazyload-woocommerce/
   Description: Lazy Load for WooCommerce includes the functionality to properly append Lazy Load into the image loop for WooCommerce in product listings (i.e. category). This does not apply to the individual product image, but anywhere they are used in the loop (by default, the unordered list). Includes a fallback if JavaScript is not active. Does not call in jQuery (you must have this already in use).
-  Version: 1.1
+  Version: 1.1.1
   Author: Edge Webware
   Author URI: http://edgewebware.com
   License: GPLv2
@@ -46,14 +46,18 @@ function lazyload_woo_all_settings($settings, $current_section) {
     if ($current_section == 'lazywoo') {
         $settings_slider = array();
         // Add Title to the Settings
-        $settings_slider[] = array('name' => __('Lazy Load Image Settings', 'lazyload-woo'), 'type' => 'title', 'desc' => __('The following options are used to configure LazyLoad for WooCommerce. It is recommended that these match your set catalog image dimensions under Display.', 'lazyload-woo'), 'id' => 'lazywoo');
+        $settings_slider[] = array(
+            'name' => __('Lazy Load Image Settings', 'lazyload-woo'), 
+            'type' => 'title', 
+            'desc' => __('The following options are used to configure LazyLoad for WooCommerce. It is recommended that these match your set catalog image dimensions under Display since that is the image we pull in.', 'lazyload-woo'), 
+            'id' => 'lazywoo');
         // Add first checkbox option
         $settings_slider[] = array(
             'name' => __('Product Width', 'lazyload-woo'),
             'desc_tip' => __('This will set the width for your catalog images', 'lazyload-woo'),
             'id' => 'lazyload-woo_width',
             'type' => 'text',
-            'desc' => __('This will set the width for your catalog images', 'lazyload-woo'),
+            'desc' => __('Use the value from the shop catalog image width', 'lazyload-woo'),
         );
         // Add second text field option
         $settings_slider[] = array(
@@ -61,7 +65,7 @@ function lazyload_woo_all_settings($settings, $current_section) {
             'desc_tip' => __('This will set the height for your catalog images', 'lazyload-woo'),
             'id' => 'lazyload-woo_height',
             'type' => 'text',
-            'desc' => __('This will set the height for your catalog images', 'lazyload-woo'),
+            'desc' => __('Use the value from the shop catalog image height', 'lazyload-woo'),
         );
         $settings_slider[] = array(
             'name' => __('Placeholder Image', 'lazyload-woo'),
@@ -100,7 +104,7 @@ if (!function_exists('woocommerce_template_loop_product_thumbnail')) {
     add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
     function woocommerce_template_loop_product_thumbnail() {
-        $llwoo_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
+        $llwoo_image_src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'shop_catalog');
         $llwoo_placeholder = get_option('lazyload-woo_placeholder');
         $llwoo_placeholder_fallback = woocommerce_placeholder_img_src();
         $llwoo_width = get_option('lazyload-woo_width');

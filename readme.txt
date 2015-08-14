@@ -3,7 +3,7 @@ Contributors: edgewebware,aibrean
 Tags: lazy load, jquery,woocommerce, products, images
 Requires at least: 4.0.0
 Tested up to: 4.3
-Stable tag: 1.1
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,16 +15,20 @@ Lazy Load for WooCommerce includes the functionality to properly append Lazy Loa
 == Installation ==
 1. Download the plugin
 2. Install the plugin
-3. Go to WooCommerce > Settings > Products and click the "Lazy Load" option. Set your Product width/height for the loop and optionally a custom placeholder image (full src).
+3. Go to WooCommerce > Settings > Products and click the "Lazy Load" option. 
+4. Set your Product width/height for the loop and optionally a custom placeholder image (full src). Your width/height should match your shop_catalog (so they have the right crops).
 
 To note, you will need to have jQuery running for this to work. To reduce conflicts, we have chosen not to include jQuery. To include jQuery, just use the following in your template functions file: `wp_enqueue_script('jquery');`
 
 Additionally, we allow for you to modify the available functions for Lazy Load. To dequeue the plugin functions and use your own, use `wp_dequeue_script('lazyload-call');`. See http://www.appelsiini.net/projects/lazyload for a full rundown of options (trigger loading, effects, images in containers, nonsequential images, invisible images, etc.).
 
 == Screenshots ==
-1. Setting up the variable width/height for the products that will be used for LazyLoad.
+1. Setting up the variable width/height for the products that will be used for LazyLoad (match shop catalog image dimensions).
 
 == Changelog ==
+= 1.1.1 =
+* Fixed: `$llwoo_image_src` so it would match the shop catalog dimensions. 
+
 = 1.1 = 
 * Tested against WP 4.3 RC1
 * Tested Against WooCommerce 2.4.4
