@@ -2,12 +2,12 @@
 Contributors: edgewebware,aibrean
 Tags: lazy load, jquery,woocommerce, products, images
 Requires at least: 4.0.0
-Tested up to: 4.2.2
-Stable tag: 1.0.1
+Tested up to: 4.3
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Lazy Load for WooCommerce includes the functionality to properly append Lazy Load into the image loop for WooCommerce (2.3.8 tested).
+Lazy Load for WooCommerce includes the functionality to properly append Lazy Load into the image loop for WooCommerce (2.4.4 tested).
 
 == Description ==
 Lazy Load for WooCommerce includes the functionality to properly append Lazy Load into the image loop for WooCommerce in product listings (i.e. category). It has been tested against WooCommerce 2.3.8. This does not apply to the individual product image, but anywhere they are used in the loop (by default, the unordered list).
@@ -25,9 +25,14 @@ Additionally, we allow for you to modify the available functions for Lazy Load. 
 1. Setting up the variable width/height for the products that will be used for LazyLoad.
 
 == Changelog ==
-= 1.0 =
-* Initial version
+= 1.1 = 
+* Tested against WP 4.3 RC1
+* Tested Against WooCommerce 2.4.4
+* Fixed: issue with `call-ll.js` "not a function" error
 
 = 1.0.1 =
 * ADDED: Support for placeholder images (url option in settings)
 * Adjusted Plugin name (Lazy Load rather than LazyLoad)
+
+= 1.0 =
+* Initial version

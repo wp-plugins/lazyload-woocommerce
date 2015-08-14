@@ -4,7 +4,7 @@
   Plugin Name: Lazy Load for WooCommerce
   Plugin URI: https://wordpress.org/plugins/lazyload-woocommerce/
   Description: Lazy Load for WooCommerce includes the functionality to properly append Lazy Load into the image loop for WooCommerce in product listings (i.e. category). This does not apply to the individual product image, but anywhere they are used in the loop (by default, the unordered list). Includes a fallback if JavaScript is not active. Does not call in jQuery (you must have this already in use).
-  Version: 1.0.1
+  Version: 1.1
   Author: Edge Webware
   Author URI: http://edgewebware.com
   License: GPLv2
